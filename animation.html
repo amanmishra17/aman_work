@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>Animation</title>
+<script language='JavaScript' type='text/JavaScript'>
+<!--
+function reset1(){
+clearTimeout(my_time);
+document.getElementById('i1').style.left= "200px";
+document.getElementById('i1').style.top= "100px";
+//document.getElementById("msg").innerHTML="";
+
+}
+
+
+
+function move_img(str) {
+
+var x=document.getElementById('i1').offsetTop;
+x= x +100;
+document.getElementById('i1').style.top= x + "px";
+
+}
+
+function disp(){
+var step=1; // Change this step value
+var y=document.getElementById('i1').offsetTop;
+var x=document.getElementById('i1').offsetLeft;
+if(y < 300 ){y= y +step;
+document.getElementById('i1').style.top= y + "px"; // vertical movment
+}else{
+if(x < 900){x= x +step;
+document.getElementById('i1').style.left= x + "px"; // horizontal movment
+}
+}
+//////////////////////
+
+}
+
+function timer(){
+disp();
+var y=document.getElementById('i1').offsetTop;
+var x=document.getElementById('i1').offsetLeft;
+
+my_time=setTimeout('timer()',7);
+}
+
+
+//-->
+</script>
+</head>
+<body bgcolor="brown">
+	<marquee direction= "right"  width ="100%"" ><font color="yellow">  Small baby running to hug her mother.!</marquee></font>
+<img src=images/baby.jpeg id='i1' alt ="baby" width="250" height="350" style="position:absolute; left: 300; top: 100;">
+<img src="images/arms.jpeg" alt="arms" width="300" height="550" align="right" align="bottom" style="margin-top: 70px" >
+<br><br><br><br>
+<input type=button onClick=timer() value='Start'>
+<input type=button onClick=reset1() value='Reset'>
+<div id='msg'></div>
+
+</body>
+</html>
